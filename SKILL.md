@@ -9,11 +9,11 @@ Use this skill to review the current local repository from a contestant's point 
 
 ## Rule Source
 
-When contest rules, eligibility, submission requirements, review criteria, or terminology are unclear, access the official charter before answering:
+When contest rules, eligibility, submission requirements, review criteria, or terminology are unclear, read the bundled charter before answering:
 
-- https://bxup9uklfcb.feishu.cn/wiki/Cv5owfd9xiT9Z5k6d8scJlV0n1a
+- `references/2026 MoonBit 国产基础软件开源大赛章程.md`
 
-Do not guess unclear contest rules from memory. If the charter cannot be accessed, say that clearly and separate verified local repository findings from unverified rule assumptions.
+Do not access the Feishu charter page during normal self-review. Do not guess unclear contest rules from memory. If the bundled charter cannot answer a rule question, say that clearly and separate verified local repository findings from unverified rule assumptions.
 
 ## Scope
 
