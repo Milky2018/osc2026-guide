@@ -1,38 +1,39 @@
 # osc2026-self-review
 
-这是一个 Agent skill，用于帮助 MoonBit国产开源生态大赛 OSC 2026 选手在提交前自查当前本地仓库。
+面向 MoonBit国产开源生态大赛 OSC 2026 选手的提交前自查 Agent skill。
 
-自查报告会结合本地仓库内容、MoonBit 项目状态和赛事章程要求，提示提交前需要处理的问题和可能触发人工复核的风险。
+它会根据当前本地仓库、MoonBit 项目状态和赛事章程，生成一份中文自查报告，帮助选手在正式提交前发现明显问题和人工复核风险。
 
-## 适用场景
+## 使用方式
 
-在参赛项目本地仓库中打开支持 Agent skill 的工具，然后输入：
+在参赛项目本地仓库中调用：
 
 ```text
 使用 $osc2026-self-review 检查当前仓库是否适合提交到 MoonBit国产开源生态大赛。
 ```
 
-如果你有申报书，也可以附上路径：
+如果已有申报书，可以同时提供路径：
 
 ```text
 使用 $osc2026-self-review 检查当前仓库。申报书在 /path/to/proposal.pdf。
 ```
 
-## 自查说明
+## 自查范围
 
-- 只检查当前本地仓库。
-- 不克隆、不 fetch、不比较 Gitlink/GitHub 远程仓库。
-- 申报书不必放在仓库中；没有提供时只会提醒提交时需要准备。
-- 默认用中文输出 Markdown 报告。
-- 自查结果仅供提交前参考，不代表赛事官方审核结论。
+- 当前本地仓库的项目内容、文档、许可证、提交记录、示例和测试。
+- 当前 MoonBit 项目配置与 `moon check` / `moon test` 结果。
+- 申报书与仓库内容的一致性；申报书不需要存放在仓库中。
+- 第三方代码、测试数据、生成文件和移植来源的许可证说明风险。
+
+自查结果仅供提交前参考，不代表赛事官方审核结论。
 
 ## 安装
 
-把这个仓库放到你的 Agent skill 目录中。例如 Codex 默认可以使用：
+将仓库放入所用 agent 工具的 skill 目录。例如：
 
 ```bash
 mkdir -p ~/.ai/skills
 git clone https://github.com/Milky2018/osc2026-self-review-skill.git ~/.ai/skills/osc2026-self-review
 ```
 
-如果你的 agent 工具没有自动刷新 skill 列表，请重启对应工具。
+如果 skill 列表没有自动刷新，请重启对应工具。
