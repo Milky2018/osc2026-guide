@@ -1,47 +1,47 @@
 # osc2026-self-review
 
-Codex skill for contestants to self-review a local MoonBit国产开源生态大赛 OSC 2026 repository before submission.
+这是一个 Codex skill，用于帮助选手在提交前自查本地的 MoonBit国产开源生态大赛 OSC 2026 参赛仓库。
 
-This skill is intended for pre-submission self-checks. It is not an official review result from the contest organizers.
+这个 skill 面向提交前自查，不代表赛事组织方的正式审核结论。
 
-## What It Checks
+## 检查内容
 
-- Whether the current local repository looks like the intended contest project.
-- Basic repository readiness, including README, root license, commit history, source layout, tests, and examples.
-- MoonBit project health with current project files such as `moon.mod` and `moon.pkg`.
-- Potential manual-review risks such as copied third-party code, unclear attribution, missing sources, or incomplete documentation.
-- Optional proposal consistency when the contestant provides a Markdown or PDF proposal.
+- 当前本地仓库是否像是准备提交的参赛项目。
+- 仓库基础状态，包括 README、根目录许可证、提交历史、源码布局、测试和示例。
+- MoonBit 项目健康度，包括当前有效的 `moon.mod`、`moon.pkg` 等项目文件。
+- 可能触发人工复核的风险，例如第三方代码拷贝、许可证归属不清、源码缺失、文档不完整等。
+- 当选手提供 Markdown 或 PDF 申报书时，检查申报书与仓库内容是否一致。
 
-## What It Does Not Do
+## 不做什么
 
-- It does not require the proposal document to be stored in the repository.
-- It does not clone, fetch, or compare Gitlink and GitHub remotes.
-- It does not emit structured JSON by default.
-- It does not replace the official contest review.
+- 不要求申报书必须放在仓库中。
+- 不克隆、不 fetch、不比较 Gitlink 和 GitHub 远程仓库。
+- 默认不输出结构化 JSON。
+- 不替代赛事官方审核。
 
-## Install
+## 安装
 
-Clone this repository into your Codex skills directory:
+把这个仓库克隆到 Codex skills 目录：
 
 ```bash
 mkdir -p ~/.ai/skills
 git clone https://github.com/Milky2018/osc2026-self-review-skill.git ~/.ai/skills/osc2026-self-review
 ```
 
-Then restart Codex if the skill list does not refresh automatically.
+如果 Codex 没有自动刷新 skill 列表，请重启 Codex。
 
-## Usage
+## 使用方式
 
-Open Codex in your local project repository and ask:
+在本地参赛项目仓库中打开 Codex，然后输入：
 
 ```text
 使用 $osc2026-self-review 用中文检查当前本地仓库是否适合提交到 MoonBit国产开源生态大赛。
 ```
 
-If you also have a proposal document, include its path:
+如果你也有申报书，可以附上申报书路径：
 
 ```text
 使用 $osc2026-self-review 检查当前仓库。申报书在 /path/to/proposal.pdf。
 ```
 
-The default report language is Chinese.
+默认自查报告使用中文输出。
