@@ -23,6 +23,7 @@ Review a contestant's local repository before submission. Frame conclusions as p
 
 - Judge MoonBit project configuration using files recognized by the current toolchain, such as `moon.mod` and `moon.pkg`, together with `moon check` / `moon test` results.
 - Inspect the package namespace in `moon.mod`, for example the `username` in `username/package`. The template default `username` should be replaced with the contestant's GitHub account name, otherwise publishing to mooncakes.io may fail.
+- Do not require the `repository` URL owner/path in `moon.mod` to match the package namespace. A package namespace such as `Milky2018/...` may validly point to a repository hosted under an organization such as `moonbit-community/...`.
 - Treat a current local branch with 10 or fewer commits as high risk. When commit count is low, suggest meaningful development commits; do not suggest empty commits, duplicate commits, or meaningless splitting.
 - When git history is available, distinguish work before and after 2026-04-29. Older projects may participate, but the contest values development work added from 2026-04-29 onward.
 - Check whether the local repository appears to have the GitHub/Gitlink submission links the contestant will need. If a remote is missing, present it as a submission-material reminder, not a remote validation failure.
