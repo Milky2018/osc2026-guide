@@ -15,7 +15,7 @@ Review a contestant's local repository before submission. The result is advisory
 - Use the bundled charter as the rule source: `references/2026 MoonBit 国产基础软件开源大赛章程.md`.
 - Use the bundled charter instead of querying online charter pages.
 - Inspect the repository directly and return a Markdown report. Do not create helper scripts or require structured output.
-- Do not clone, fetch, or sync remote repositories. Do not compare Gitlink/GitHub remote contents. Local `git remote -v` may be inspected only to remind the contestant what links they need to submit.
+- Do not compare Gitlink/GitHub remote contents. Local `git remote -v` may be inspected only to remind the contestant what links they need to submit.
 - Run `moon version --all` to check the MoonBit toolchain version and confirm it is at least `0.10.0`. If the command is unavailable or the version is too old, report it as a toolchain environment issue.
 - Check whether `moonbitlang/skills` is installed, using the current tool's exposed skill list or local skill directories when available. If it is missing, suggest installing https://github.com/moonbitlang/skills for better MoonBit development assistance. This is an optional environment suggestion, not a project risk.
 
