@@ -19,8 +19,6 @@ When the user asks a broad question, asks for help, or invokes the skill without
 4. 申报书应该写什么？
 5. GitHub / Gitlink 仓库应该如何准备？
 6. 如何自查项目是否适合提交？
-
-建议先安装 MoonBit 1.0 或更新版本的工具链，并安装 moonbitlang/skills，以获得更完整的 MoonBit 开发辅助。
 ```
 
 Then answer the user's actual question directly. Do not expose organizer-side review automation, internal status names, or email-routing details.
@@ -52,10 +50,9 @@ If the user asks why they have not received an email after submitting a proposal
 
 ## Environment Suggestions
 
-- Recommend MoonBit 1.0 or later.
-- Use `moon version --all` when the user asks about local environment readiness or requests project review.
-- Check whether `moonbitlang/skills` is installed, using the current tool's exposed skill list or local skill directories when available.
-- If `moonbitlang/skills` is missing, suggest installing https://github.com/moonbitlang/skills as an optional environment improvement.
+- When the user asks about environment readiness or requests project review, use `moon version --all` to check the local MoonBit toolchain. If the version is older than MoonBit 1.0, suggest upgrading.
+- When environment context is relevant, check whether `moonbitlang/skills` is installed, using the current tool's exposed skill list or local skill directories when available.
+- Suggest installing https://github.com/moonbitlang/skills only when it appears to be missing or when the user asks how to improve MoonBit development assistance.
 
 ## Review Mode
 
