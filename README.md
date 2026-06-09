@@ -4,11 +4,17 @@
 
 ## 安装
 
-将仓库放入所用 agent 工具的 skill 目录。例如：
+推荐使用 `skills` CLI 安装：
 
 ```bash
-mkdir -p ~/.ai/skills
-git clone https://github.com/Milky2018/osc2026-self-review-skill.git ~/.ai/skills/osc2026-self-review
+npx skills add Milky2018/osc2026-self-review-skill
+```
+
+也可以手动克隆到本地 Agent skill 目录：
+
+```bash
+mkdir -p ~/.agent/skills
+git clone https://github.com/Milky2018/osc2026-self-review-skill.git ~/.agent/skills/osc2026-self-review
 ```
 
 如果 skill 列表没有自动刷新，请重启对应工具。
