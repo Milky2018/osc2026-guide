@@ -24,6 +24,7 @@
 - 当前 MoonBit 项目配置与 `moon check` / `moon test` 结果。
 - 申报书与仓库内容的一致性；申报书不需要存放在仓库中。
 - 第三方代码、测试数据、生成文件和移植来源的许可证说明风险。
+- 本地是否已安装 [`moonbitlang/skills`](https://github.com/moonbitlang/skills)；未安装时会作为可选环境建议提示。
 
 自查结果仅供提交前参考，不代表赛事官方审核结论。
 
