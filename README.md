@@ -7,7 +7,7 @@
 推荐使用 `skills` CLI 安装：
 
 ```bash
-npx skills add Milky2018/osc2026-self-review-skill
+npx skills@latest add Milky2018/osc2026-self-review-skill -g --skill osc2026-self-review
 ```
 
 也可以手动克隆到本地 Agent skill 目录：
