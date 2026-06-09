@@ -1,11 +1,11 @@
 ---
 name: osc2026-self-review
-description: 面向 MoonBit国产开源生态大赛 OSC 2026 选手的本地仓库提交前自查 skill。用于检查当前本地 MoonBit 参赛仓库是否存在明显提交风险，并按中文 Markdown 给出自查报告。
+description: 面向 MoonBit国产开源生态大赛 OSC 2026 选手的本地仓库提交前自查 Agent skill。用于检查当前本地 MoonBit 参赛仓库是否存在明显提交风险，并按中文 Markdown 给出自查报告。
 ---
 
 # OSC 2026 Self Review
 
-这是一个面向选手的提交前自查 skill，不是赛事组织方的正式审核。
+这是一个面向选手的提交前自查 Agent skill，不是赛事组织方的正式审核。
 
 ## 必须注入的上下文
 
