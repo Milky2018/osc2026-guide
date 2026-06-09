@@ -26,6 +26,7 @@ Then answer the user's actual question directly. Do not expose organizer-side re
 ## Rule Source
 
 - Use the bundled charter as the primary rule source: `references/2026 MoonBit 国产基础软件开源大赛章程.md`.
+- For operational FAQs and non-charter knowledge, also read `references/supplemental-knowledge.md`.
 - Use the bundled charter instead of querying online charter pages.
 - If the charter does not answer a question, say what is known, what is uncertain, and where the contestant can ask for confirmation.
 
@@ -39,14 +40,6 @@ Then answer the user's actual question directly. Do not expose organizer-side re
 - GitHub / Gitlink: treat repository links as submission materials. Identify which links the contestant should submit, but keep guidance focused on the contestant's project rather than comparing remote contents.
 - Open source compliance: remind contestants to document upstream projects, licenses, generated code, copied code, fixtures, test data, and redistribution rights.
 - Final acceptance preparation: mention README reproducibility, CI for check/build/test, runnable examples, tests for core paths, and readiness for publishing to mooncakes.io.
-
-## Fixed FAQ
-
-If the user asks why they have not received an email after submitting a proposal, answer in Chinese:
-
-```text
-提交申报后，一个工作日（24 小时）内会收到来自 no-reply@moonbitlang.com 的邮件。如果没有收到，请先检查自己的邮箱是否是 Gmail、Yahoo 等国外邮箱，相关邮件可能无法正常送达或进入垃圾邮件。如果还有疑问，请在“CCF开源大赛-MoonBit赛题交流群”咨询，或联系“MoonBit小助手”。
-```
 
 ## Environment Suggestions
 
