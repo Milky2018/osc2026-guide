@@ -35,9 +35,9 @@ The report should help the contestant decide what to fix before submission. Use 
 
 - 总体判断
 - 提交前需要处理的问题
-- 可能触发人工复核的风险
+- 需要进一步确认的问题
 - 建议改进
 - 已检查的证据
 - 可选环境建议
 
-Separate facts, inferences, and uncertain rule interpretations. Cite local commands or files for evidence-backed conclusions. Present items requiring organizer judgment as risks, not final rulings.
+Separate facts, inferences, and uncertain rule interpretations. Cite local commands or files for evidence-backed conclusions. Present items that cannot be verified locally as points to clarify, not final rulings.
