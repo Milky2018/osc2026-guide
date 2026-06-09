@@ -1,76 +1,38 @@
 ---
 name: osc2026-self-review
-description: Help contestants self-review a local MoonBit国产开源生态大赛 OSC 2026 project repository before submission. Use when the user asks to check whether the current local repo is ready for the contest, wants a pre-submission review, or invokes $osc2026-self-review.
+description: 面向 MoonBit国产开源生态大赛 OSC 2026 选手的本地仓库提交前自查 skill。用于检查当前本地 MoonBit 参赛仓库是否存在明显提交风险，并按中文 Markdown 给出自查报告。
 ---
 
 # OSC 2026 Self Review
 
-Use this skill to review the current local repository from a contestant's point of view before submitting to MoonBit国产开源生态大赛. The goal is a practical Markdown or HTML report, not an official verdict.
+这是一个面向选手的提交前自查 skill，不是赛事组织方的正式审核。
 
-## Rule Source
+## 必须注入的上下文
 
-When contest rules, eligibility, submission requirements, review criteria, or terminology are unclear, read the bundled charter before answering:
+- 默认用中文输出，除非用户明确要求其他语言。
+- 只审查当前本地仓库，或用户明确给出的本地路径。
+- 不克隆、不 fetch、不比较 Gitlink/GitHub 远程仓库。
+- 申报书不要求放在仓库里；没有申报书时只提醒选手提交时准备，不当作仓库缺陷。
+- 不写脚本，不要求结构化 JSON；直接检查仓库并输出 Markdown 报告。
+- 不访问飞书章程页面。规则不清楚时读取本 skill 内置章程：`references/2026 MoonBit 国产基础软件开源大赛章程.md`。
 
-- `references/2026 MoonBit 国产基础软件开源大赛章程.md`
+## 赛事特定判断
 
-Do not access the Feishu charter page during normal self-review. Do not guess unclear contest rules from memory. If the bundled charter cannot answer a rule question, say that clearly and separate verified local repository findings from unverified rule assumptions.
+- 当前 MoonBit 项目可以使用 `moon.mod` 和 `moon.pkg`。不要因为缺少 `moon.mod.json` 或 `moon.pkg.json` 判定有问题。
+- 当前本地分支提交数不超过 10 时，提示为高风险。不要为了满足提交数而建议空提交、重复提交或无意义拆分。
+- 项目级许可证优先看仓库根目录的 `LICENSE*`。
+- 如果项目移植或参考其他开源项目，应提醒选手在 README 或专门文档中说明原项目名称、链接、许可证和参考范围。
+- 重点关注会影响自查结论的证据：MoonBit 主体实现、README 可用性、可运行示例、测试、`moon check`/`moon test`、第三方代码或测试数据的来源与许可证说明。
+- 如果发现个人敏感信息，不要在报告中复述具体内容，只说明存在敏感信息风险和文件位置。
 
-## Scope
+## 输出要求
 
-- Review only the current local repository or an explicitly provided local path.
-- Do not clone, fetch, or compare Gitlink and GitHub remotes.
-- Do not require the proposal document to live in the repo. If no proposal is found or provided, mention it as a submission reminder, not a blocking repo issue.
-- Do not write or run bundled scripts for the review. Inspect the repo directly with existing tools such as `git`, `rg`, `find`, `ls`, and `moon`.
-- Do not emit JSON, YAML, or other fixed schemas unless the user explicitly asks for one.
+报告应该让选手知道“现在提交会有什么风险、应该先改什么”。建议使用这些小节，但可按实际情况调整：
 
-## Review Workflow
+- 总体判断
+- 提交前必须处理
+- 可能触发人工复核的风险
+- 建议改进
+- 已检查的证据
 
-1. Establish context:
-   - Confirm the repo path with `pwd`.
-   - Check `git status --short`, `git remote -v`, and recent commit history.
-   - Identify whether the local repo appears to be the project intended for contest submission.
-
-2. Inspect repository basics:
-   - Root files: `README*`, `LICENSE*`, `moon.mod`, `moon.pkg`, `.gitignore`, documentation, examples, tests.
-   - MoonBit layout: packages, `src/`, `test/`, examples, generated files, vendored code.
-   - Commit count on the current branch. Flag repositories with 10 or fewer commits as high risk unless the user gives a different contest rule.
-
-3. Check MoonBit build health:
-   - Prefer `moon check` from the repo root when the `moon` command is available.
-   - Run `moon test` when tests exist or when it is cheap enough for the repo.
-   - Treat `moon.mod` and `moon.pkg` as current valid MoonBit project files. Do not require `moon.mod.json` or `moon.pkg.json`.
-   - If the toolchain is missing or commands fail for environmental reasons, separate that from project defects.
-
-4. Review submission readiness:
-   - Confirm the project is visibly MoonBit-related and not just a wrapper around unrelated code.
-   - Check whether the README explains what the project does, how to build/test/use it, and what is complete.
-   - Check root-level license status. Project-level license review should focus on the repository root.
-   - Look for copied third-party code, fixtures, test data, generated code, or vendored dependencies that may need license attribution.
-   - Look for signs that important source files are missing, generated artifacts are committed without sources, or examples/tests cannot be reproduced.
-
-5. Optional proposal review:
-   - If the user provides a proposal document path, read it when it is Markdown or PDF.
-   - If a proposal document is present in the repo, review it briefly for consistency with the repo.
-   - If no proposal is available, add a reminder that the submitted proposal should contain the correct project repository information and match the local repo.
-
-## Report Format
-
-Return normal Markdown by default. Write in Chinese unless the user explicitly asks for another language. Keep the report readable for a contestant in China.
-
-Use sections like:
-
-- Overall assessment
-- Must fix before submission
-- Risks that may trigger manual review
-- Suggested improvements
-- Evidence checked
-
-Write concrete findings with file paths, command outcomes, and short explanations. Avoid overstating certainty: this is a self-review, not the organizer's final review.
-
-## Important Review Rules
-
-- Missing proposal in the repo is not a rejection reason for self-review.
-- This skill reviews the local repository state only; remote Gitlink/GitHub consistency is outside scope.
-- Current MoonBit projects may use `moon.mod` and `moon.pkg`; absence of `moon.mod.json` is not a problem.
-- Do not expose or repeat personal sensitive information if found in proposal documents or repo files.
-- If the repo has a clear blocking problem, say so directly and explain how the contestant can fix it.
+结论要区分事实和推断。能用本地命令或文件证明的，写明证据；属于规则不确定或需要赛事方判断的，明确说是风险而不是最终裁决。
