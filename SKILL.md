@@ -46,7 +46,7 @@ Then answer the user's actual question directly with contestant-facing guidance.
 - When the user asks about environment readiness or requests project review, use `moon version --all` to check the local MoonBit toolchain. If the version is older than MoonBit 1.0, suggest upgrading.
 - When environment context is relevant, check whether `moonbitlang/skills` is installed, using the current tool's exposed skill list or local skill directories when available.
 - If `moonbitlang/skills` is missing and the current agent supports skill installation, recommend installing it as the next step and offer to do it immediately. If installation is not available, provide the install command.
-- When the toolchain is missing/outdated or `moonbitlang/skills` is missing, end the response with a concise offer such as: `需要我帮你把最新的 MoonBit 工具链和 moonbitlang/skills 安装上吗？`
+- When the toolchain is missing/outdated or `moonbitlang/skills` is missing, end the response with a concise offer tailored to the missing items, such as: `如果你愿意，我可以顺手帮你把 MoonBit 工具链更新到最新版，并装好 moonbitlang/skills。`
 
 ## Review Mode
 
