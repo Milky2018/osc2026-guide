@@ -7,7 +7,7 @@
 推荐使用 `skills` CLI 安装：
 
 ```bash
-npx skills@latest add Milky2018/osc2026-guide -g --skill osc2026-guide
+npx skills@latest add Milky2018/osc2026-guide -g --skill osc2026-guide --agent universal
 ```
 
 也可以手动克隆到本地 Agent skill 目录：
