@@ -21,7 +21,7 @@ When the user asks a broad question, asks for help, or invokes the skill without
 6. 如何自查项目是否适合提交？
 ```
 
-Then answer the user's actual question directly. Do not expose organizer-side review automation, internal status names, or email-routing details.
+Then answer the user's actual question directly with contestant-facing guidance.
 
 ## Rule Source
 
