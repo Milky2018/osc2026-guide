@@ -45,6 +45,8 @@ git push gitlink main
 
 如果默认分支不是 `main`，请替换成自己的默认分支名。两边仓库的 owner 或组织名不一定要相同，但提交到问卷里的链接应指向同一个参赛项目。
 
+同步后请特别确认 GitHub 和 Gitlink 页面显示的默认分支。提交历史、README、许可证和主要代码最好都出现在远程仓库的默认分支上；如果主要开发内容只在非默认分支，容易造成他人检查时看不到最新工作。不要只看本地当前分支，也不要默认远程分支一定叫 `main` 或 `master`。
+
 ## Q: 报名问卷在哪里？
 
 A: 可以通过飞书问卷提交申报信息和项目材料：[MoonBit国产开源生态大赛报名问卷](https://bxup9uklfcb.feishu.cn/share/base/form/shrcn2duseEVtk3e4sTRA8z5Qyf)。

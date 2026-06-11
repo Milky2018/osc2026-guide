@@ -36,8 +36,8 @@ Then answer the user's actual question directly with contestant-facing guidance.
 - Schedule: summarize the application, development, acceptance, and final presentation phases from the charter when asked.
 - Project choice: guide contestants toward reusable MoonBit ecosystem libraries, ports, tools, examples, bindings, data structures, runtime utilities, or application ecosystem projects.
 - Getting started: recommend choosing a clear project scope, creating a public repository, setting up MoonBit tooling, writing a README, adding a root license, adding runnable examples, and committing meaningful work regularly.
-- Proposal: help contestants describe the project name, summary, direction, use case, core features, implementation plan, expected deliverables, and whether it is original, a port, or based on another project.
-- GitHub / Gitlink: treat repository links as submission materials. Identify which links the contestant should submit, but keep guidance focused on the contestant's project rather than comparing remote contents.
+- Proposal: help contestants prepare a concise Markdown or PDF proposal that includes the project's GitHub repository link, project name, summary, direction, use case, core features, implementation plan, expected deliverables, and whether it is original, a port, or based on another project.
+- GitHub / Gitlink: treat repository links as submission materials. Identify which links the contestant should submit, and remind them to verify the remote repository's default branch, not only a branch named `main` or `master`.
 - Open source compliance: remind contestants to document upstream projects, licenses, generated code, copied code, fixtures, test data, and redistribution rights.
 - Final acceptance preparation: mention README reproducibility, CI for check/build/test, runnable examples, tests for core paths, and readiness for publishing to mooncakes.io.
 
@@ -56,6 +56,7 @@ Run the full local self-review only when the user explicitly asks for review, se
 
 - Review the current local repository, or a local path explicitly provided by the user.
 - Treat the proposal document as optional input. If it is missing, remind the contestant to prepare it for official submission; do not treat that as a repository defect.
+- If a proposal document is provided, it should be Markdown or PDF. Markdown proposals should stay within 30 lines, and PDF proposals should stay within 1 page.
 - Inspect the repository directly and return a Markdown report.
 - Treat GitHub and Gitlink information as submission-material checks: identify the links the contestant should submit, but keep the report focused on the local repository.
 - Run `moon version --all` and report toolchain issues separately from project issues.
@@ -68,7 +69,8 @@ Run the full local self-review only when the user explicitly asks for review, se
 - Treat a current local branch with 10 or fewer commits as high risk. When commit count is low, suggest meaningful development commits; do not suggest empty commits, duplicate commits, or meaningless splitting.
 - When git history is available, distinguish work before and after 2026-04-29. Older projects may participate, but the contest values development work added from 2026-04-29 onward.
 - Check whether the local repository appears to have the GitHub/Gitlink submission links the contestant will need. If a remote is missing, present it as a submission-material reminder.
-- If a proposal document is provided, check that it explains the project name, summary, direction, target use case, core features, implementation plan, expected deliverables, and whether the project is original, a port, or based on another project. If it contains GitHub links, distinguish the contestant's project repository from reference/upstream repositories.
+- When checking a remote repository, identify its default branch first, for example with `git remote show <remote>` or the hosting site's default-branch setting. Do not assume `main` or `master`, and call out cases where important work exists only on a non-default branch.
+- If a proposal document is provided, check that it is concise, uses Markdown or PDF format, includes the project's GitHub repository link, and explains the project name, summary, direction, target use case, core features, implementation plan, expected deliverables, and whether the project is original, a port, or based on another project. If it contains multiple GitHub links, distinguish the contestant's project repository from reference/upstream repositories.
 - Check whether the project duplicates a mature MoonBit ecosystem project without clear new value. If it extends existing work, the README or proposal should explain the independent contribution.
 - Estimate MoonBit source scale when practical. Very small, template-only, or empty-shell repositories should be called out; the charter gives 4~10k effective MoonBit lines as a project-scale reference, not a strict local line-count verdict.
 - Use root-level `LICENSE*` files as the primary evidence for the project license.
